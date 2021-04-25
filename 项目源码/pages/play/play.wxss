@@ -1,0 +1,192 @@
+/* 直接设置div的高度100%不生效，
+1. 需要设置page高度百分百才可以 
+2. 使用position设置绝对定位也可以实现
+*/
+.content{
+  width: 100%;
+  height: 100%;
+  background-color: #222;
+  position: absolute;
+  left: 0rpx;
+  top: 0rpx;
+}
+/* 播放页面的背景图，跟屏幕一样大 
+  注意：图片标签的bug是自带3像素左右的下边距，
+  通过设置定位、display:block、浮动
+*/
+.img_big{
+  width: 100%;
+  height: 100%;
+  display: block;
+  /* 设置透明度 
+    opacity:取值范围是0到1之间小数
+    0:完全透明
+    1：完全不透明
+  */
+  opacity: 0.1;
+}
+/* 歌曲名称样式 */
+.songName{
+  width: 100%;
+  /* 文字水平居中 */
+  text-align: center;
+  font-size: 40rpx;
+  position: absolute;
+  top: 80rpx;
+  color: rgb(150, 238, 77);
+}
+/* 中间区域的样式，既有动画，又有歌词区 */
+.middle{
+  width: 100%;
+  height: 700rpx;
+  /* background-color: yellow; */
+  position: absolute;
+  top: 180rpx;
+}
+/* 存放封面的view标签 */
+.cd-image{
+  width: 600rpx;
+  height: 600rpx;
+  margin: 50rpx auto;
+  /* background-color: green; */
+}
+/* 封面样式 */
+.cd-image image{
+  width: 400rpx;
+  height: 400rpx;
+  /* 旋转动画 */
+  animation: zhuan 3s linear infinite;
+  /* 边框圆角化 */
+  border-radius: 50%;
+  /* 设置图片边框        dashed(虚线) 
+    参数分别是：边框颜色、solid(实线) 、边框的宽度
+  */
+
+  border: #222 solid 100rpx;
+}
+@keyframes zhuan{
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+/* 存放歌词并且能滚动的标签 */
+.lyric-show{
+  width: 80%;
+  height: 100%;
+  /* background-color: blue; */
+  margin: 0 auto;
+}
+/* 歌词外层的一个view标签 */
+.lyric-content{
+  width: 100%;
+}
+/* 对歌词样式调整 
+   text:行级标签，不会换行显示
+*/
+.lyric-content text{
+  height: 30px;
+  /* 块级标签 */
+  display: block;
+  /* 最后一个参数设置透明度 */
+  color: rgb(242, 230, 230);
+  text-align: center;
+  font-size: 34rpx;
+  /* 调整每句歌词的行高 */
+  line-height: 30px;
+  /* 溢出时隐藏 */
+  overflow: hidden;
+  /* 文本不进行换行 */
+  white-space: nowrap;
+  /* 文本超出部分显示省略号 */
+  text-overflow: ellipsis;
+}
+/* 正在播放的歌词 */
+.lyric-content .currentLyric{
+  color: #b8f283;
+}
+/* 去除滚动条 */
+::-webkit-scrollbar{
+  width: 0rpx;
+  height: 0rpx;
+}
+/* 控制条样式 */
+.controls{
+  width: 100%;
+  height: 130rpx;
+  background-color: #e6e8e5;
+  position: absolute;
+  bottom: 0rpx;
+}
+/* 调整控制条图标样式 */
+.controls image{
+  width: 95rpx;
+  height: 95rpx;
+  margin-left: 115rpx;
+  margin-top: 16rpx;
+}
+/* 进度条样式 */
+.progress{
+  width: 100%;
+  height: 100rpx;
+  /* background-color: green; */
+  position: absolute;
+  bottom: 180rpx;
+  display: flex;
+}
+/* 调整播放时间play_time和结束时间end_time的样式 */
+.play_time,.end_time{
+  width: 15%;
+  height: 100%;
+  color: white;
+  margin-top: 20rpx;
+}
+/* 调整进度条样式 */
+.progress slider{
+  width: 70%;
+  height: 100%;
+}
+/* 评论区的样式 */
+.comment-show{
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  /* background-color: yellow; */
+}
+/* 每一条评论的样式,存放用户信息和评论内容 */
+.comment-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 15rpx;
+}
+.comment-user{
+  display: flex;
+  flex-direction: row;
+  margin-left: 0rpx;
+}
+/* 评论人的头像 */
+.comment-user image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+/* 评论人的昵称 */
+.comment-user text{
+  font-size: 34rpx;
+  font-weight: 600;
+  color: white;
+  margin-top: 25rpx;
+  margin-left: 30rpx;
+}
+/* 评论正文 */
+.comment-content{
+  font-size: 34rpx;
+  color: rgba(255,255, 255, 0.5);
+  padding-top: 10rpx;
+  padding-left: 10rpx;
+  /* 属性增加或减少字符间的空白 */
+  letter-spacing: 2rpx;
+}

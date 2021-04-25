@@ -1,0 +1,107 @@
+<!-- 绘制一个大div标签,存放页面的所有内容 -->
+<view class='content'>
+  <!-- 设置图片作为播放页面的背景图片 -->
+  <image class='img_big' src='{{song.album.picUrl}}'></image>
+  <!-- 显示歌名 -->
+  <view class='songName'>{{song.name}}</view>
+  <!-- 中间区域，显示歌曲封面和歌词滚动互相切换 -->
+  <swiper class='middle'>
+    <!-- 存放歌曲封面 -->
+    <swiper-item>
+      <!-- 存放歌曲封面的view标签 -->
+      <view class='cd-image'>
+        <!-- 
+          animation-play-state:动画的播放状态，取值有paused和running两种
+          Java中：char ''   String""    
+         -->
+        <image style='animation-play-state:{{state=="play"?"running":"paused"}}'  src='{{song.album.picUrl}}'></image>
+      </view>
+    </swiper-item>
+    <!-- 存放歌词 -->
+    <swiper-item>
+      <!-- 存放歌词的可滚动标签
+          scroll-view:竖向滚动时，要设置高度
+          scroll-y:设置竖向滚动
+          scroll-top:竖向滚动条的高度
+          marginTop:0，30，60，90递增30的规律
+          scroll-with-animation:滚动时使用动画过度
+       -->
+      <scroll-view class='lyric-show' scroll-with-animation="true" scroll-y="true" scroll-top="{{marginTop}}">
+        <!-- 存放歌词的view标签 -->
+        <view class='lyric-content'>
+          <block wx:for="{{lyricContent}}" wx:for-item="lyric" wx:for-index="index">
+            
+                <!-- index:取到数组中的每个下标
+                      能够取到歌词数组中的下标(每一句的行号)
+                currentIndex:取到当前播放到的行号
+                选择器优先级:id>class>标签 -->
+            
+            <text class='{{currentIndex==index?"currentLyric":""}}'>{{lyric[1]}}</text>
+          </block>
+          <!-- 解决歌曲唱到末尾时歌词的抽搐 -->
+          <view style='height:600rpx;'></view>
+        </view>
+      </scroll-view>
+    </swiper-item>
+    <!-- 歌曲评论 -->
+    <swiper-item>
+      <!-- 存放可以滚动的评论 -->
+      <scroll-view scroll-y="true" class="comment-show">
+        <!-- 存放所有的评论标签 -->
+        <view class="talk-comment">
+          <block wx:for="{{commentData}}" wx:for-item="comment">
+          <!-- 存放评论人的头像 昵称 评论内容 -->
+            <view class="comment-container">
+                <!-- 存放评论人的用户信息(头像和昵称) -->
+                <view class="comment-user">
+                    <image src="{{comment.user.avatarUrl}}"></image>
+                    <text>{{comment.user.nickname}}</text>
+                </view>
+                <!-- 存放评论正文 -->
+                <text class="comment-content">{{comment.content}}</text>
+            </view>
+          </block>
+        </view>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+  <!-- 进度条 -->
+  <view wx:if="{{endTime}}" class="progress">
+    <!-- 播放时间 -->
+    <view class="play_time">{{playTime}}</view>
+    <!-- 滑动选择器，进度条效果 
+        block-size:滑块大小
+        block-color:滑块颜色
+        activeColor:已选择的颜色
+        min:进度条最小取值
+        max:进度条最大取值(这里我们设置为歌曲总时长)
+        value:进度条取值（这里是歌曲的当前播放进度）
+        bindchange:完成进度条拖动之后触发的方法
+    -->
+    <slider bindchange="dragProgress"  max="{{max}}" value="{{move}}" block-size="15" block-color="#c20c0c" activeColor="#c20c0c"></slider>
+    <!-- 结束时间 -->
+    <view class="end_time">{{endTime}}</view>
+  </view>
+  <!-- 控制条 -->
+  <view class='controls'>
+    <image src='/images/prev.png'></image>
+    <!-- 
+      点击事件：控制暂停与播放
+      state是play时，代表当前歌曲是播放状态，所以显示pause.png
+      state是pause时，代表当前歌曲时暂停状态，所以显示play.png
+      三元运算符： 表达式1?结果1:结果2
+                  当表达式1为true时，取结果1，为false时，取结果2
+                  例如： 2>3?"嘻嘻":"哈哈"
+     -->
+    <image bindtap='pauseOrPlay' src='/images/{{state=="play"?"pause":"play"}}.png'></image>
+    <image src='/images/next.png'></image>
+  </view>
+</view>
+<!-- 音频标签 
+     src:音频路径
+     请求：客户端向服务器发起的叫请求
+     响应：服务器根据客户端请求给出的回应
+     audio:method取值有两种，play:播放   pause:暂停
+     bindtimeupdate:歌曲进度改变时触发的事件,执行changeTime方法
+-->
+<audio bindtimeupdate="changeTime" action="{{action1}}" src='http://music.163.com/song/media/outer/url?id={{musicId}}.mp3'></audio>

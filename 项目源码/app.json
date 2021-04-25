@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/my/my",
+    "pages/home/home",
+    "pages/play/play",
+    "pages/mv/mv",
+    "pages/flex/flex",
+    "pages/find/find",
+    "pages/test/test",
+    "pages/search/search"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#c20c0c",
+    "navigationBarTitleText": "网易云音乐",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#000",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "selectedColor": "#c20c0c",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "/images/home.png",
+        "selectedIconPath": "/images/home-active.png"
+      },
+      {
+        "pagePath": "pages/find/find",
+        "text": "发现",
+        "iconPath": "/images/find.png",
+        "selectedIconPath": "/images/find-active.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "/images/my.png",
+        "selectedIconPath": "/images/my-active.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,126 @@
+/*导航栏*/
+.homeContainer{
+  width: 100%;
+  height: 300rpx;
+  border-radius: 10%;
+}
+.homeContainer image{
+  width: 100%;
+  height: 100%;
+  border-radius: 7%;
+}
+/*
+中间引入部分
+*/
+.online{
+  width: 100%;
+  height: 150rpx;
+  margin-top: 10rpx;
+  display: flex;
+}
+.online image{
+  width: 140rpx;
+  height: 150rpx;
+  line-height: 150rpx;
+  margin-left: 55rpx;
+}
+.left{
+  width: 33.33%;
+  height: 150rpx;
+}
+.center{
+  width: 33.33%;
+  height: 150rpx;
+}
+.right{
+  width: 33.33%;
+  height: 150rpx;
+}
+.text{
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  line-height: 80rpx;
+  text-align: center;
+  margin: 0 0;
+}
+.text_left{
+  width: 33.33%;
+  height: 80rpx;
+}
+.text_center{
+  width: 33.33%;
+  height: 80rpx;
+}
+.text_right{
+  width: 33.33%;
+  height: 80rpx;
+}
+/*
+分割线
+*/
+.divline{
+  width: 100%;
+  height: 15rpx;
+}
+.line{
+  width: 100%;
+  height: 4rpx;
+  background: black;
+  line-height: 15rpx;
+}
+/*
+推荐歌单
+*/
+.tuijiangedan{
+  width: 100%;
+  height: 30rpx;
+  margin-top: 8rpx;
+}
+.tuijiangedan text{
+  font-weight: 800;
+}
+/*
+专辑
+*/
+.album{
+  width: 100%;
+  height: 198rpx;
+  display: flex;
+}
+.album_picture{
+  width: 33.33%;
+  height: 160rpx;
+  margin-top: 50rpx;
+  margin-left: 50rpx;
+}
+.album image{
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 15%;
+}
+.text_music{
+  width: 100%;
+  height: 60rpx;
+  display: flex;
+  line-height: 30rpx;
+  text-align: left;
+  margin: 0 0;
+  font-size: 25rpx;
+  margin-top: 15rpx;
+  margin-left: 40rpx;
+}
+.text_music_left{
+  width: 170rpx;
+  height: 100%;
+}
+.text_music_center{
+  width: 170rpx;
+  height: 100%;
+  margin-left: 80rpx;
+}
+.text_music_right{
+  width: 170rpx;
+  height: 100%;
+  margin-left: 80rpx;
+}

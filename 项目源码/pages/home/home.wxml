@@ -1,0 +1,90 @@
+<swiper class='homeContainer' indicator-dots="true" indicator-color="black" indicator-active-color="red" autoplay='true' circular="true" interval='3000'>
+<swiper-item>
+  <image src='http://p1.music.126.net/hB1LGixUVSxQ0ltdEpTQGQ==/109951164974997362.jpg?imageView&quality=89'></image>
+</swiper-item>
+<swiper-item>
+  <image src='http://p1.music.126.net/B-A49RyNGZhzLrFYuDymTQ==/109951164974064779.jpg?imageView&quality=89'>
+  </image>
+</swiper-item>
+<swiper-item>
+  <image src='http://p1.music.126.net/cCqjRiHCd1eF7nYmvAVBtA==/109951164975008392.jpg?imageView&quality=89'>
+  </image>
+</swiper-item>
+<swiper-item>
+  <image src='http://p1.music.126.net/w-obBiG7Ec338xmkB8rVzw==/109951164974794890.jpg?imageView&quality=89'>
+  </image>
+</swiper-item>
+</swiper>
+<view class='online'>
+  <view class='left'>
+    <image src='/images/menu.png'></image>
+  </view>
+  <view class='center'>
+    <image src='/images/music_menu.png'></image>
+  </view>
+  <view class='right'>
+    <image src='/images/list.png'></image>
+  </view>
+</view>
+<view class='text'>
+  <view class='text_left'><text>为您推荐</text></view>
+  <view class='text_center'><text>歌单</text></view>
+  <view class='text_right'><text>排行榜</text></view>
+</view>
+<view class='divline'>
+  <view class='line'></view>
+</view>
+<view>
+  <view class='tuijiangedan'>
+    <text>推荐歌单</text>
+  </view>
+</view>
+<view class='album'>
+  <view class='album_picture'>
+    <image src='http://p3.music.126.net/eCLb-U3OVeDaLJdD9Kfyhw==/109951164963517392.jpg?param=200y200'></image>
+  </view>
+  <view class='album_picture'>
+    <image src='http://p2.music.126.net/OESpGYIv-9UD6Jgvj61zZg==/109951164575382705.jpg?param=140y140'></image>
+  </view>
+  <view class='album_picture'>
+    <image src='http://p1.music.126.net/XgF8r2wfeacECu0e58B6jw==/109951164891572909.jpg?param=140y140'></image>
+  </view>
+</view>
+<view class='text_music'>
+  <view class='text_music_left'><text>相信未来：为未来歌唱，为信念发声</text></view>
+  <view class='text_music_center'><text>有些事不能说，不能想，却又不能忘</text></view>
+  <view class='text_music_right'><text>精选||我永远屈服于温柔ฅ'ω'ฅ</text></view>
+</view>
+<view class='album'>
+  <view class='album_picture'>
+    <image src='http://p2.music.126.net/5-9gyQIC88K3b2tnIkIvBg==/109951164952741787.jpg?param=140y140'></image>
+  </view>
+  <view class='album_picture'>
+    <image src='http://p3.music.126.net/liTm4wTyiI-AfQoSHOLytw==/109951164951641877.jpg?param=200y200'></image>
+  </view>
+  <view class='album_picture'>
+    <image src='http://p1.music.126.net/RRFu6VeRuBH6Cbbi30_L6A==/109951164923240340.jpg?param=140y140'></image>
+  </view>
+</view>
+<view class='text_music'>
+  <view class='text_music_left'><text>在那些灰暗的日子里，请自己看得起自己</text></view>
+  <view class='text_music_center'><text>我...想你了...</text></view>
+  <view class='text_music_right'><text>【浮世电台】--怎样才算真正放下一个人</text></view>
+</view>
+
+<view class='album'>
+  <view class='album_picture'>
+    <image src='http://p1.music.126.net/R-6LHG3jKs3xEEto5l43CA==/109951164838538942.jpg?param=140y140'></image>
+  </view>
+  <view class='album_picture'>
+    <image src='http://p2.music.126.net/BqHM3hlDz3uZvCDs9ZlCPQ==/109951164082360408.jpg?param=140y140'></image>
+  </view>
+  <view class='album_picture'>
+    <image src='http://p4.music.126.net/LJsMADNvkK_0ilmXbKg_TQ==/109951164809294621.jpg?param=200y200'></image>
+  </view>
+</view>
+<view class='text_music'>
+  <view class='text_music_left'><text>为什么我们喜欢单曲循环伤感音乐？</text></view>
+  <view class='text_music_center'><text>与我无关 王巨星（cover：阿冗）</text></view>
+  <view class='text_music_right'><text>极光轻音乐 | 听了让你落泪的轻音乐</text></view>
+</view>

@@ -1,0 +1,33 @@
+<!-- 导航条 -->
+<view class="nav">
+  <block wx:for="{{navs}}" wx:for-item="nav">
+    <view class="{{navPosition==nav.index?'current-nav':''}}" data-index="{{nav.index}}" bindtap="changeNav">{{nav.title}}</view>
+  </block>
+</view>
+<!-- 滑动模块 
+    current:当前所在滑块的 index
+    bindchange:current 改变时会触发 change 事件
+    duration:
+-->
+<swiper duration="100" bindchange="changeSwiper" current="{{navPosition}}">
+  <swiper-item>
+    <view class="swiper-content">
+      <text>本地音乐列表...</text>
+    </view>
+  </swiper-item>
+  <swiper-item>
+    <view class="swiper-content">
+      <text>下载管理...</text>
+    </view>
+  </swiper-item>
+  <swiper-item>
+    <view class="swiper-content">
+      <text>我的电台...</text>
+    </view>
+  </swiper-item>
+  <swiper-item>
+    <view class="swiper-content">
+      <text>我的收藏...</text>
+    </view>
+  </swiper-item>
+</swiper>
